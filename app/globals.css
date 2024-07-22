@@ -2,32 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html {
+  background-color: #101114;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  /* .left-sidebar {
+    @apply sticky top-0 left-0 w-fit flex flex-col justify-between border-none bg-black-1 text-white-1 pt-8 max-md:hidden lg:w-[270px] lg:pl-8;
+  } */
+  .left-sidebar {
+    @apply pt-8 pl-8 w-64 h-screen text-white-1 bg-black-1;
+  }
+  .right-sidebar {
+    @apply sticky top-0 right-0 flex flex-col w-[310px] border-none bg-black-1 px-[30px] pt-8 max-xl:hidden;
+  }
+  .text-12 {
+    @apply text-[12px] leading-normal;
+  }
+  .text-14 {
+    @apply text-[14px] leading-normal;
+  }
+  .text-16 {
+    @apply text-[16px] leading-normal;
+  }
+  .text-18 {
+    @apply text-[18px] leading-normal;
+  }
+  .text-20 {
+    @apply text-[20px] leading-normal;
+  }
+  .text-24 {
+    @apply text-[24px] leading-normal;
+  }
+  .text-32 {
+    @apply text-[32px] leading-normal;
   }
 }
