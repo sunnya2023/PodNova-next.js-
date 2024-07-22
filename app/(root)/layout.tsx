@@ -4,6 +4,8 @@
 // import Image from "next/image";
 
 import LeftSidebar from "@/components/LeftSidebar";
+import RightSidebar from "@/components/RightSidebar";
+import Image from "next/image";
 
 // export default function RootLayout({
 //   children,
@@ -39,11 +41,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
-      <main>
+    <div className="w-full h-full">
+      <main className=" flex justify-between ">
         <LeftSidebar />
-        {children}
-        <p className="text-white-1">right</p>
+
+        <section className="pt-8 px-8 border-red-500 border-2 w-full h-screen md:px-4">
+          <Image
+            src="/logo.svg"
+            width={50}
+            height={46}
+            alt="로고"
+            className="md:hidden"
+          />
+          <div className="text-white-1">{children}</div>
+        </section>
+
+        <RightSidebar />
       </main>
     </div>
   );

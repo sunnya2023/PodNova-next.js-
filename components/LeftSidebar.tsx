@@ -59,13 +59,19 @@ import React from "react";
 
 const LeftSidebar = () => {
   const pathname = usePathname();
-  const route = useRouter();
+  const router = useRouter();
 
   return (
     <section className="left-sidebar ">
-      <nav className="flex flex-col gap-6">
-        <Link href="/" className="flex gap-2 pb-10 max-lg:justify-center">
-          <Image src="/logo.svg" width={35} height={40} alt="로고" />
+      <nav className="flex flex-col gap-6 pl-8 max-lg:pl-4">
+        <Link href="/" className="flex gap-2 pb-10 ">
+          <Image
+            src="/logo.svg"
+            width={30}
+            height={35}
+            alt="로고"
+            className="h-[35px] w-[30px]"
+          />
           <h1 className="text-white-1 text-24 font-extrabold">PodNova</h1>
         </Link>
 
@@ -76,17 +82,15 @@ const LeftSidebar = () => {
             <Link
               href={link.route}
               key={index}
-              className={cn("flex gap-3 items-center py-4 max-lg:px-4 ", {
-                "bg-nav-focus border-r-orange-500 border-r-2 h-full": isActive,
+              className={cn("flex gap-3 items-center py-4 ", {
+                "bg-nav-focus border-r-4 border-r-orange-1 ": isActive,
               })}
-              // className="flex gap-3 items-center py-4 max-lg:px-4 "
             >
               <Image
                 src={link.imgURL}
                 width={24}
                 height={24}
                 alt={link.label}
-                className="inline-block"
               />
               <p>{link.label}</p>
             </Link>
